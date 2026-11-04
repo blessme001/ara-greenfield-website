@@ -57,7 +57,7 @@ if(form){
  form.addEventListener('submit',async e=>{e.preventDefault();if(!form.reportValidity())return;const button=$('button[type=submit]',form),status=$('#form-status');button.disabled=true;button.textContent='Sending…';status.textContent='';status.className='';const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),20000);
  try{const result=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'},signal:controller.signal});if(!result.ok)throw new Error('Submission failed');status.className='success';status.textContent='Thank you. Your enquiry has been sent to our team.';form.reset()}
  catch{status.className='error';status.textContent='We could not confirm delivery. Your entries are still here. Please retry or email Alfred@aragreenfieldng.com.'}
- finally{clearTimeout(timeout);button.disabled=false;button.textContent='Send enquiry ↗'}
+ finally{clearTimeout(timeout);button.disabled=false;button.textContent='Send enquiry '}
  });
 }
 // Pause other editorial videos when one starts.
