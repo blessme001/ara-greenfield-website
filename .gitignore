@@ -1,0 +1,7 @@
+node_modules/
+dist/
+design-reference/
+.env
+.env.*
+!.env.example
+.DS_Store
