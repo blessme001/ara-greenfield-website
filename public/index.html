@@ -36,6 +36,37 @@
       #hero-toggle {
         display: none !important;
       }
+
+      /* Five product cards in one row on desktop */
+      .featured-products {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      /* Photo fills its card without stretching */
+      .featured-products .feature-product img {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Tablet: flexible columns */
+      @media (max-width: 1100px) {
+        .featured-products {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+      }
+
+      /* Small screens: two columns */
+      @media (max-width: 850px) {
+        .featured-products {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* Header logo size */
+      .brand-logo {
+        height: 60px;
+        width: auto;
+      }
     </style>
   </head>
 
@@ -50,7 +81,7 @@
           href="index.html"
           aria-label="ARA Greenfield home"
         >
-          <span class="brand-mark" aria-hidden="true">A<span>G</span></span>
+          <img src="logo.png" alt="ARA Greenfield logo" class="brand-logo">
 
           <span>
             ARA GREENFIELD
@@ -289,7 +320,7 @@
               </span>
             </a>
 
-            <!-- SESAME: image added -->
+            <!-- SESAME -->
             <a
               class="feature-product typographic"
               href="contact.html?commodity=Sesame"
@@ -307,7 +338,7 @@
               </span>
             </a>
 
-            <!-- COCOA: image added -->
+            <!-- COCOA -->
             <a
               class="feature-product typographic cocoa"
               href="contact.html?commodity=Cocoa"
@@ -322,6 +353,24 @@
                 <small>AGRICULTURAL PRODUCTS</small>
                 <h3>Cocoa</h3>
                 <b>Explore sourcing opportunities </b>
+              </span>
+            </a>
+
+            <!-- SOYBEANS -->
+            <a
+              class="feature-product typographic soybeans"
+              href="contact.html?commodity=Soybeans"
+            >
+              <img
+                src="media/soybeans.jpg"
+                alt="Soybeans"
+                loading="lazy"
+              >
+
+              <span>
+                <small>SEEDS &amp; PULSES</small>
+                <h3>Soybeans</h3>
+                <b>Explore export opportunities </b>
               </span>
             </a>
           </div>
